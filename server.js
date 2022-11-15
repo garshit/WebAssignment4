@@ -85,7 +85,7 @@ app.post("/login", (req, res) => {
   }
   newUser.findOne({ username: userdata.username, password: userdata.pass }, ["firstname", "lastname", "username"]).exec().then((data) => {
     if (data) {
-        if (data.id == "63731d86a860064866410853") {
+        if (data.id == "637334404c1dbec03e38862b") {
             res.render("dashboard_admin", { firstname: data.firstname, lastname: data.lastname, username: data.username, layout: false });
             return;
         }
@@ -168,8 +168,10 @@ if(userdata.username=="" ||
 }).save((e, data) => {
     if (e) {
         console.log(e);
+
     } else {
         console.log(data);
+
     }
 });
   res.render("dashboard_user", {firstname: userdata.firstname, lastname: userdata.lastname, username: userdata.username,layout: false });
