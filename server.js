@@ -24,10 +24,8 @@ var registerUserSchema = new Schema({
   "city": String,
   "postal": String,
   "country": String,
-  "password": {
-      "type": String,
-      "unique": true
-  } 
+  "password": String,
+    
 });
 
 const newUser = mongoose.model("Assignment4_registerUser", registerUserSchema);
